@@ -1,112 +1,103 @@
 <html>
+
 <head>
-    <title>리뷰작성</title>
-    <meta charset = 'utf-8'>
+  <title>리뷰작성</title>
+  <meta charset='utf-8'>
 
-    <!-- css -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- css -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
-    <!-- js -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <!-- js -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
 
-    <!-- jquery -->
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <!-- jquery -->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-    <style>
-
+  <style>
     .margin1 {
-        margin: 30px 30px 30px;
+      margin: 30px 30px 30px;
     }
 
-    .margin2{
-        margin-top: 30px;
+    .margin2 {
+      margin-top: 30px;
     }
-
-
-    </style>
-
-    <script>
-
-        
-
-
-
-
-
-        function q2() {
-            alert('리뷰가 등록되었습니다');
-            let score = $('#select').val();
-            let review = $('#review').val();
-            let temp_html = '<tr>\
-                                <td>'+score+'</td>\
-                                <td>'+review+'</td>\
-                              </tr>'
-
-            $('review-box').append(temp_html);
-
-        }
-
-    </script>
-
-
+  </style>
 </head>
 
 <body>
 
-    <div class='margin1'>
+  <div class='margin1'>
 
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">공연리뷰</h1>
-              <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-            </div>
-          </div>
-
-
-        <img src="{{ url_for('static', filename='4.jpg') }}" class="d-block w-100" alt="사진4" , height='500px'>
-
-        <div class ='margin2'>
-            <h1 style="display:inline-block">공연이름</h1>
-            <p style="display:inline-block;position:relative;left:10px">날짜</p>
-                <p>협정을 맺은 국가 간에 군사 기밀을 서로 공유할 수 있도록 맺는 협정으로, 영어 약자를 따 '지소미아(GSOMIA)'라고도 한다. 국가 간 정보 제공 방법, 정보의 보호와 이용 방법은 물론 제공 경로와 제공된 정보의 용도, 보호의무와 파기 등의 내용을 규정하고 있다. 다만 협정을 체결해도 모든 정보가 상대국에 무제한 제공되는 것은 아니며, 상호주의에 따라 사안별로 검토해 선별적인 정보 교환이 이뤄진다. 이에 반해 상호군수지원협정은 유엔 평화유지군 활동이나 대규모 재난 등의 상황에서 양국군이 상호 군수품과 서비스를 제공할 수 있도록 맺는 협정을 일컫는다. </p>
-        </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">공연리뷰</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      </div>
+    </div>
 
 
-            <table>
-            <tr>
-                <td>평점 :  </td>
-                <td>
-                    <select style="width:500px;height:40px;" class ="input" id = "select">
-                    <option value='1'>1점</option>
-                    <option value='2'>2점</option>
-                    <option value='3'>3점</option>
-                    <option value='4'>4점</option>
-                    <option value='5'>5점</option>
-                </td>
+    <img src="{{exhibition.img}}" class="d-block w-100" alt="사진4" , height='500px'>
 
-            </tr>
-            <tr>
-                <td>평론:  </td>
-                <td > <input type="text" class ="input" id ="review" style="width:500px;height:40px;" placeholder="리뷰를 작성해주세요"></td>
+    <div class='margin2'>
+      <h1 style="display:inline-block">{{exhibition.name}}</h1>
+      <p style="display:inline-block;position:relative;left:10px">날짜</p>
+      <p>협정을 맺은 국가 간에 군사 기밀을 서로 공유할 수 있도록 맺는 협정으로, 영어 약자를 따 '지소미아(GSOMIA)'라고도 한다. 국가 간 정보 제공 방법, 정보의 보호와 이용 방법은 물론 제공
+        경로와 제공된 정보의 용도, 보호의무와 파기 등의 내용을 규정하고 있다. 다만 협정을 체결해도 모든 정보가 상대국에 무제한 제공되는 것은 아니며, 상호주의에 따라 사안별로 검토해 선별적인 정보 교환이
+        이뤄진다. 이에 반해 상호군수지원협정은 유엔 평화유지군 활동이나 대규모 재난 등의 상황에서 양국군이 상호 군수품과 서비스를 제공할 수 있도록 맺는 협정을 일컫는다. </p>
+    </div>
 
-            </tr>
-            </table>
+    <form id="review-box" method="POST" action="/review/{{exhibition._id}}">
+      <table>
+        <tr>
+          <td>평점 : </td>
+          <td>
+            <select style="width:500px;height:40px;" class="input" name="score">
+              <option value='1'>1점</option>
+              <option value='2'>2점</option>
+              <option value='3'>3점</option>
+              <option value='4'>4점</option>
+              <option value='5'>5점</option>
+            </select>
+          </td>
 
-            <button class='margin2' onclick = "q2()">submit</button>
+        </tr>
+        <tr>
+          <td>평론: </td>
+          <td> <input type="text" class="input" name="review" style="width:500px;height:40px;" placeholder="리뷰를 작성해주세요">
+          </td>
 
-            <table class="table">
-                  <thead>
-                        <tr>
-                            <th scope="col">평점</th>
-                            <th scope="col">평론</th>
-                        </tr>
-                  </thead>
-                  <tbody id = "review-box">
-                  </tbody>
-                </table>
+        </tr>
+      </table>
+
+      <button class='margin2' type="submit">submit</button>
+    </form>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">평점</th>
+          <th scope="col">평론</th>
+        </tr>
+        {% for data in review %}
+        <tr>
+          <td>{{data.score}}</td>
+          <td>{{data.review}}</td>
+        </tr>
+        {% endfor %}
+      </thead>
+      <tbody id="review-box">
+      </tbody>
+    </table>
 
 
 
@@ -115,4 +106,5 @@
 
 
 </body>
+
 </html>
